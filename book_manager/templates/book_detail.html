@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>书名:{{ book.1 }}</p>
+    <p>作者:{{ book.2 }}</p>
+    <from action="{% url 'delete_book' %}" method="post">
+        <input type="hidden" name="book_id" value="{{ book.0 }}">
+        <input type="submit" value="删除按钮">
+    </from>
+{% endblock %}
